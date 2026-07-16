@@ -9,11 +9,11 @@
 :root {
   --BODY-COLOR: #dbebfa;
   --BORDER-RADIUS: 15px;
+  --COLOR-CARD: #79c3f84f;
   --HEADER-BG-COLOR: #007fdb;
   --HEADER-COLOR: white;
   --MARGIN-TOP: 1rem;
   --PADDING: 0.25rem 0.5rem;
-  --COLOR-CARD: #79c3f84f;
 }
 
 html {
@@ -38,8 +38,8 @@ video {
 }
 
 figcaption {
-  position: absolute;
   left: -100000px;
+  position: absolute;
 }
 
 .nowrap {
@@ -52,8 +52,8 @@ figcaption {
 }
 
 .warning-input {
-  border: 2px solid red;
   animation: shake 0.3s linear 2;
+  border: 2px solid red;
 }
 
 .outline-input {
@@ -152,7 +152,7 @@ label::after {
   transform: translateX(-20px) rotate(-45deg);
 }
 
-:is(header:hover, header:focus-within) nav[aria-label="main navigation"] {
+:is(header:hover, header:focus-within) .main-navigation {
   display: block;
 }
 
@@ -177,32 +177,32 @@ header nav {
   }
 }
 
-nav[aria-label="main navigation"] ul {
+.main-navigation ul {
   display: flex;
   flex-flow: column nowrap;
   list-style-type: none;
 }
 
-nav[aria-label="main navigation"] li {
+.main-navigation li {
   border-top: 1px solid black;
   padding: 0.5rem;
 }
 
-nav[aria-label="main navigation"] a {
+.main-navigation a {
   display: block;
   margin: auto;
   text-align: center;
   width: 80%;
 }
 
-nav[aria-label="main navigation"] a:any-link {
+.main-navigation a:any-link {
   color: var(--HEADER-COLOR);
   font-weight: bold;
   text-decoration: none;
 }
 
-nav[aria-label="main navigation"] a:hover,
-nav[aria-label="main navigation"] a:focus {
+.main-navigation a:hover,
+.main-navigation a:focus {
   transform: scale(1.2);
   transition: all 0.3s;
 }
@@ -213,11 +213,11 @@ p {
 }
 
 .hello {
-  position: absolute;
   left: -100000px;
+  position: absolute;
 }
 
-nav[aria-label="Social media links"] ul {
+.social-media-links ul {
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
@@ -226,23 +226,30 @@ nav[aria-label="Social media links"] ul {
   padding: 1rem 0px;
 }
 
-nav[aria-label="Social media links"] li {
+.social-media-links li {
   list-style-type: none;
 }
 
-nav[aria-label="Social media links"] a {
+.social-media-links a {
   text-decoration: none;
 }
 
-nav[aria-label="Social media links"] i {
+.social-media-links i {
   padding-top: 0.5rem;
   transform: scale(1.15);
   transition: all 0.5s;
 }
 
-nav[aria-label="Social media links"] i:hover,
-nav[aria-label="Social media links"] i:focus {
+.social-media-links i:hover,
+.social-media-links i:focus {
   transform: scale(1.5);
+}
+
+.my-photo {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 .my-photo h3 {
@@ -268,6 +275,7 @@ nav[aria-label="Social media links"] i:focus {
 .hero-buttons {
   align-items: center;
   display: flex;
+  flex-flow: row wrap;
   gap: 2rem;
   justify-content: center;
   margin-top: 0.5rem;
@@ -280,8 +288,7 @@ nav[aria-label="Social media links"] i:focus {
   color: var(--HEADER-COLOR);
   display: block;
   font-weight: bold;
-  height: 3em;
-  padding: 1em;
+  padding: 0.9em;
   text-align: center;
   text-decoration: none;
   transition: all 1s 0.2s;
@@ -292,12 +299,10 @@ nav[aria-label="Social media links"] i:focus {
   align-items: center;
   background-color: transparent;
   border-radius: var(--BORDER-RADIUS);
-  border: 2px solid var(--HEADER-BG-COLOR);
   display: flex;
   font-weight: bold;
-  height: 3em;
   justify-content: center;
-  padding: 1em;
+  padding: 0.9em;
   text-decoration: none;
   transition: all 1s 0.2s;
   width: min(100%, 158px);
@@ -607,7 +612,7 @@ section[id] {
   align-items: center;
   display: flex;
   flex-flow: row wrap;
-  gap: 1.5rem;
+  gap: 1.2rem;
   justify-content: center;
   margin-top: 0.5rem;
 }
@@ -617,10 +622,10 @@ section[id] {
   border-radius: var(--BORDER-RADIUS);
   border: none;
   color: var(--HEADER-COLOR);
-  height: 2rem;
+  padding: 0.5em 0.8em;
   text-align: center;
   transition: all 0.5s;
-  width: 7rem;
+  width: min(100%, 150px);
 }
 
 .buttons .show-code {
@@ -631,11 +636,11 @@ section[id] {
   color: var(--HEADER-COLOR);
   display: block;
   display: flex;
-  height: 2rem;
   justify-content: center;
+  padding: 0.5em 0.8em;
   text-decoration: none;
   transition: all 0.5s;
-  width: 7rem;
+  width: min(100%, 150px);
 }
 
 .buttons .show-demo:hover,
@@ -877,12 +882,15 @@ form button {
   display: flex;
   font-weight: bold;
   justify-content: center;
-  padding: 0.3rem 0.2rem;
+  padding: 0.4rem 0.3rem;
   width: min(100%, 4.5em);
 }
 
 .buttons-form {
+  align-items: center;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
   transition: all 0.5s;
 }
 
@@ -904,7 +912,6 @@ form button {
 
 @media screen and (min-width: 576px) {
   .me {
-    margin-inline: auto;
     width: min(100%, 400px);
   }
 
@@ -940,7 +947,6 @@ form button {
 
 @media screen and (min-width: 768px) {
   .me {
-    margin-inline: auto;
     width: min(100%, 360px);
   }
 
@@ -986,20 +992,20 @@ form button {
     display: block;
   }
 
-  nav[aria-label="main navigation"] ul {
+  .main-navigation ul {
     flex-flow: row nowrap;
   }
 
-  nav[aria-label="main navigation"] li {
+  .main-navigation li {
     border-top: none;
   }
 
-  nav[aria-label="main navigation"] a {
+  .main-navigation a {
     width: 100%;
   }
 
-  nav[aria-label="main navigation"] a:hover,
-  nav[aria-label="main navigation"] a:focus {
+  .main-navigation a:hover,
+  .main-navigation a:focus {
     background-color: white;
     color: #333;
   }
@@ -1008,13 +1014,13 @@ form button {
     flex-flow: row-reverse nowrap;
   }
 
-  nav[aria-label="Social media links"] i {
+  .social-media-links i {
     margin-inline: 0.2rem;
     transform: scale(1.3);
   }
 
-  nav[aria-label="Social media links"] i:hover,
-  nav[aria-label="Social media links"] i:focus {
+  .social-media-links i:hover,
+  .social-media-links i:focus {
     transform: scale(1.7);
   }
 
@@ -1078,9 +1084,27 @@ form button {
 @media screen and (max-height: 435px) and (orientation: landscape) {
   .me {
     height: auto;
-    margin-inline: auto;
     width: min(calc(33% - 0.25rem), 260px);
   }
+
+  .download-cv {
+    padding: 0.5em;
+    width: min(100%, 140px);
+  }
+
+  .btn-contact {
+    padding: 0.5em;
+    width: min(100%, 140px);
+  }
+
+  .buttons .show-code {
+    width: min(100%, 140px);
+  }
+
+  .buttons .show-demo {
+    width: min(100%, 140px);
+  }
+
   .project-card {
     width: min(calc(33% - 0.25rem), 200px);
   }
@@ -1110,7 +1134,7 @@ form button {
     color: var(--HEADER-COLOR);
   }
 
-  nav[aria-label="main navigation"] li {
+  .main-navigation li {
     border-top: 1px solid var(--HEADER-COLOR);
   }
 
@@ -1161,7 +1185,7 @@ form button {
   }
 
   @media screen and (min-width: 992px) {
-    nav[aria-label="main navigation"] li {
+    .main-navigation li {
       border-top: none;
     }
   }
