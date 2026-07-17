@@ -22,6 +22,15 @@ const currentYear = new Date().getFullYear();
 year.setAttribute("datetime", String(currentYear));
 year.textContent = currentYear;
 
+const menuButton = document.querySelector(".menu-button");
+const menuIcon = document.querySelector(".menu-icon");
+const nav = document.querySelector(".main-navigation");
+
+menuButton.addEventListener('click', ()=> {
+    menuIcon.classList.toggle("changed");
+    nav.classList.toggle("display-menu");
+});
+
 const form = document.querySelector(".form-contact");
 const name = document.querySelector("#name");
 const email = document.querySelector("#email");
