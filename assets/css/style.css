@@ -22,6 +22,7 @@ html {
 
 body {
   background-color: var(--BODY-COLOR);
+  font-size: clamp(1rem, 2.2vh, 1.5rem);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -281,6 +282,7 @@ p {
   flex-flow: column-reverse nowrap;
   justify-content: center;
   padding: var(--PADDING);
+  margin-bottom: 0.5rem;
 }
 
 .introduction {
@@ -310,7 +312,6 @@ p {
   text-align: center;
   text-decoration: none;
   transition: all 1s 0.2s;
-  width: min(100%, 158px);
 }
 
 .btn-contact {
@@ -323,7 +324,6 @@ p {
   padding: 0.9em;
   text-decoration: none;
   transition: all 1s 0.2s;
-  width: min(100%, 158px);
 }
 
 .download-cv:hover,
@@ -643,7 +643,7 @@ section[id] {
   padding: 0.5em 0.8em;
   text-align: center;
   transition: all 0.5s;
-  width: min(100%, 150px);
+  width: min(100%, 160px);
 }
 
 .buttons .show-code {
@@ -658,7 +658,7 @@ section[id] {
   padding: 0.5em 0.8em;
   text-decoration: none;
   transition: all 0.5s;
-  width: min(100%, 150px);
+  width: min(100%, 160px);
 }
 
 .buttons .show-demo:hover,
@@ -764,15 +764,15 @@ dialog a {
 }
 
 .muchaweb-logo {
-  height: 3.1rem;
+  height: 3.3rem;
   transition: all 0.5s;
-  width: 3.1rem;
+  width: 3.3rem;
 }
 
 .muchaweb-logo:hover,
 .muchaweb-logo:focus {
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 3.6rem;
+  width: 3.6rem;
 }
 
 #skills {
@@ -956,6 +956,14 @@ form button {
   textarea {
     width: min(100%, 400px);
   }
+
+  .buttons .show-code {
+    width: min(100%, 180px);
+  }
+
+  .buttons .show-demo {
+    width: min(100%, 180px);
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1097,7 +1105,7 @@ form button {
 @media screen and (max-height: 435px) and (orientation: landscape) {
   .me {
     height: auto;
-    width: min(calc(33% - 0.25rem), 260px);
+    width: min(calc(34% - 0.25rem), 260px);
   }
 
   .download-cv {
