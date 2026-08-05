@@ -26,7 +26,13 @@ const menuButton = document.querySelector(".menu-button");
 const menuIcon = document.querySelector(".menu-icon");
 const nav = document.querySelector(".main-navigation");
 
-menuButton.addEventListener("click", () => {
+document.addEventListener("click", () => {
+  menuIcon.classList.remove("changed");
+  nav.classList.remove("display-menu");
+});
+
+menuButton.addEventListener("click", (e) => {
+  e.stopPropagation();
   menuIcon.classList.toggle("changed");
   nav.classList.toggle("display-menu");
 });
